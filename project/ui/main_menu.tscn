@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1vij04bt4g42"]
+[gd_scene load_steps=10 format=3 uid="uid://c1vij04bt4g42"]
 
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_rhrit"]
-[ext_resource type="Texture2D" uid="uid://epdgrl7edl56" path="res://ui/ball_technology_title.png" id="2_n3kqd"]
 [ext_resource type="Texture2D" uid="uid://dehsu60ms5763" path="res://ui/play_unpressed.png" id="2_qjk2i"]
 [ext_resource type="Texture2D" uid="uid://c44rxahyfu0w" path="res://ui/background.png" id="2_tuou6"]
 [ext_resource type="Texture2D" uid="uid://b41x52lfds2d" path="res://ui/play_pressed.png" id="3_fk6wg"]
@@ -40,11 +39,6 @@ offset_right = 390.0
 offset_bottom = 583.0
 texture_normal = ExtResource("4_ilkxf")
 texture_pressed = ExtResource("5_aow15")
-
-[node name="BallTechnologyTitle" type="Sprite2D" parent="."]
-position = Vector2(290, 254.5)
-scale = Vector2(1.08752, 1.1129)
-texture = ExtResource("2_n3kqd")
 
 [node name="CreditsButton" type="TextureButton" parent="."]
 layout_mode = 0
