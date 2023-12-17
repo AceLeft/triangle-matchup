@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpkf2370ojung"]
+
+[ext_resource type="Script" path="res://ball/ball.gd" id="1_iwiw3"]
+[ext_resource type="Texture2D" uid="uid://b647vnlgye7hi" path="res://common/ball.png" id="2_nel08"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_thpws"]
+friction = 0.0
+bounce = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gye05"]
+radius = 38.0132
+
+[sub_resource type="Curve" id="Curve_yxl2g"]
+_data = [Vector2(0.0888252, 1), 0.0, 0.0, 0, 0, Vector2(0.985673, 0.505208), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_7qj34"]
+colors = PackedColorArray(1, 1, 1, 0.843137, 1, 1, 1, 0)
+
+[node name="Ball" type="RigidBody2D" groups=["balls"]]
+collision_mask = 6
+physics_material_override = SubResource("PhysicsMaterial_thpws")
+gravity_scale = 0.0
+linear_damp_mode = 1
+script = ExtResource("1_iwiw3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gye05")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+lifetime = 0.2
+texture = ExtResource("2_nel08")
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_yxl2g")
+color_ramp = SubResource("Gradient_7qj34")
+
+[node name="Ball" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_nel08")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6vvcs05fetqx"]
+
+[ext_resource type="Script" path="res://target/target.gd" id="1_vs068"]
+[ext_resource type="Texture2D" uid="uid://b647vnlgye7hi" path="res://common/ball.png" id="2_67ufh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ham0x"]
+radius = 38.0132
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxcah"]
+radius = 49.0102
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g8wxf"]
+radius = 40.05
+
+[node name="Target" type="RigidBody2D" groups=["targets"]]
+collision_layer = 2
+collision_mask = 6
+gravity_scale = 0.0
+freeze = true
+script = ExtResource("1_vs068")
+
+[node name="Ball" type="Sprite2D" parent="."]
+modulate = Color(0.376471, 0, 0.835294, 1)
+texture = ExtResource("2_67ufh")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ham0x")
+
+[node name="NeighborDetector" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Detector" type="CollisionShape2D" parent="NeighborDetector"]
+shape = SubResource("CircleShape2D_xxcah")
+
+[node name="BallStopper" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="BallStopper"]
+shape = SubResource("CircleShape2D_g8wxf")
+
+[connection signal="body_entered" from="BallStopper" to="." method="_on_ball_stopper_body_entered"]

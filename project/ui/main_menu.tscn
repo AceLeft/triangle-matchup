@@ -1,0 +1,130 @@
+[gd_scene load_steps=11 format=3 uid="uid://c1vij04bt4g42"]
+
+[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_rhrit"]
+[ext_resource type="Texture2D" uid="uid://epdgrl7edl56" path="res://ui/ball_technology_title.png" id="2_n3kqd"]
+[ext_resource type="Texture2D" uid="uid://dehsu60ms5763" path="res://ui/play_unpressed.png" id="2_qjk2i"]
+[ext_resource type="Texture2D" uid="uid://c44rxahyfu0w" path="res://ui/background.png" id="2_tuou6"]
+[ext_resource type="Texture2D" uid="uid://b41x52lfds2d" path="res://ui/play_pressed.png" id="3_fk6wg"]
+[ext_resource type="Texture2D" uid="uid://qq3c2pp16063" path="res://ui/quit_unpressed.png" id="4_ilkxf"]
+[ext_resource type="Texture2D" uid="uid://dlrg8bo3j4cck" path="res://ui/quit_pressed.png" id="5_aow15"]
+[ext_resource type="Texture2D" uid="uid://c1n8yvhxfc4hm" path="res://ui/credits.png" id="8_hl7sa"]
+[ext_resource type="Texture2D" uid="uid://j5bwpqdqrdij" path="res://ui/how_to_play.png" id="9_eh4mw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8uxj5"]
+font_size = 28
+font_color = Color(0, 0.113725, 0.192157, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rhrit")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(290, 450)
+texture = ExtResource("2_tuou6")
+
+[node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 406.0
+offset_right = 390.0
+offset_bottom = 489.0
+texture_normal = ExtResource("2_qjk2i")
+texture_pressed = ExtResource("3_fk6wg")
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 500.0
+offset_right = 390.0
+offset_bottom = 583.0
+texture_normal = ExtResource("4_ilkxf")
+texture_pressed = ExtResource("5_aow15")
+
+[node name="BallTechnologyTitle" type="Sprite2D" parent="."]
+position = Vector2(290, 254.5)
+scale = Vector2(1.08752, 1.1129)
+texture = ExtResource("2_n3kqd")
+
+[node name="CreditsButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 685.0
+offset_right = 184.0
+offset_bottom = 832.0
+texture_normal = ExtResource("8_hl7sa")
+
+[node name="HowToPlayButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 685.0
+offset_right = 544.0
+offset_bottom = 832.0
+texture_normal = ExtResource("9_eh4mw")
+
+[node name="LabelBox" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.639
+anchor_top = 0.214
+anchor_right = -0.639
+anchor_bottom = 0.214
+offset_left = -1.0
+offset_top = 359.0
+offset_right = 580.0
+offset_bottom = 830.0
+
+[node name="OKButton" type="Button" parent="LabelBox"]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 401.0
+offset_right = 318.0
+offset_bottom = 451.0
+theme_override_font_sizes/font_size = 30
+text = "OK"
+
+[node name="HowToPlayText" type="Label" parent="LabelBox"]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 26.0
+offset_right = 574.0
+offset_bottom = 376.0
+theme_override_colors/font_color = Color(0.117647, 0.2, 0.207843, 1)
+theme_override_font_sizes/font_size = 48
+text = "Objective: Clear all targets by launching balls and making matching groups of 3 or more. AVOID targets reaching the red line!
+Controls: 
+Change angle: A/D or Left/Right Arrow Keys or Scrollwheel
+Launch: Space or Left Click"
+label_settings = SubResource("LabelSettings_8uxj5")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CreditsText" type="Label" parent="LabelBox"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = 40.0
+offset_right = 580.0
+offset_bottom = 391.0
+theme_override_colors/font_color = Color(0, 0.184314, 0.192157, 1)
+theme_override_font_sizes/font_size = 26
+text = "Developers
+Brooke Wright and Jadi Miller
+
+Third-Party Assets
+Main game music: Wolfgang_'s Bonus Round
+Title/end screen music:
+ Joth's 8-Bit Title Screen Music
+Win/ Loss song composer: Spring. Bicycle horn sound by AntumDeluge
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="LabelBox/OKButton" to="." method="_on_ok_button_pressed"]

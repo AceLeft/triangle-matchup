@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dal8grjnpxjcr"]
+
+[ext_resource type="Script" path="res://ui/end_screen.gd" id="1_febv4"]
+[ext_resource type="Texture2D" uid="uid://c44rxahyfu0w" path="res://ui/background.png" id="2_7mnnt"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_febv4")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(290, 450)
+texture = ExtResource("2_7mnnt")
+
+[node name="PlayAgainButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 442.0
+offset_right = 341.0
+offset_bottom = 473.0
+text = "Play Again"
+
+[node name="WonLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 303.0
+offset_right = 449.0
+offset_bottom = 394.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+
+[connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]

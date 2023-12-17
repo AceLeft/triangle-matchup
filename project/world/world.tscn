@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://w0o47ad726ii"]
+
+[ext_resource type="Script" path="res://world/world.gd" id="1_a48bm"]
+[ext_resource type="PackedScene" uid="uid://cq2i47v4qf8v6" path="res://ball/launcher.tscn" id="2_qou6k"]
+[ext_resource type="PackedScene" uid="uid://btkcf71y1d2ma" path="res://target/target_manager.tscn" id="3_6mgrn"]
+[ext_resource type="Texture2D" uid="uid://c1ir1gyax7fju" path="res://world/fail_line.png" id="4_c4qcn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f085i"]
+size = Vector2(598, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bi2d6"]
+size = Vector2(69.5, 903)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_a48bm")
+
+[node name="Background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(725, 1125)
+offset_left = -28.0
+offset_top = -44.0
+offset_right = 697.0
+offset_bottom = 1081.0
+
+[node name="FailLine" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = 715.0
+offset_right = 592.0
+offset_bottom = 733.0
+texture = ExtResource("4_c4qcn")
+
+[node name="FailLineArea" type="Area2D" parent="FailLine"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="FailLineCollision" type="CollisionShape2D" parent="FailLine/FailLineArea"]
+position = Vector2(295, 89)
+shape = SubResource("RectangleShape2D_f085i")
+
+[node name="Launcher" parent="." instance=ExtResource("2_qou6k")]
+position = Vector2(295, 768)
+
+[node name="TargetManager" parent="." instance=ExtResource("3_6mgrn")]
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(-21, 455)
+shape = SubResource("RectangleShape2D_bi2d6")
+
+[node name="LeftWallColor" type="ColorRect" parent="LeftWall"]
+offset_left = -9.0
+offset_right = 5.0
+offset_bottom = 905.0
+color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(651, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(-43, 446)
+shape = SubResource("RectangleShape2D_bi2d6")
+
+[node name="RightWallColor" type="ColorRect" parent="RightWall"]
+offset_left = -76.0
+offset_top = -4.0
+offset_right = -62.0
+offset_bottom = 901.0
+color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[connection signal="area_entered" from="FailLine/FailLineArea" to="." method="_on_fail_line_area_area_entered"]
+[connection signal="move_down_requested" from="TargetManager" to="." method="_on_target_manager_move_down_requested"]
+[connection signal="targets_gone" from="TargetManager" to="." method="_on_target_manager_targets_gone"]

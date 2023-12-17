@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://budgfr2cg602a"]
+
+[ext_resource type="Script" path="res://common/jukebox.gd" id="1_bfdbo"]
+[ext_resource type="AudioStream" uid="uid://c540jq5ryawhd" path="res://common/bonusgame.ogg" id="1_gj6v5"]
+[ext_resource type="AudioStream" uid="uid://catuq6j2xs7ik" path="res://common/8Bit_Title_Screen.ogg" id="3_o4t2w"]
+[ext_resource type="AudioStream" uid="uid://cuksqh3bg63bd" path="res://common/lose.ogg" id="4_tp4aa"]
+[ext_resource type="AudioStream" uid="uid://bgejmbvqyeokv" path="res://common/win.ogg" id="5_1uag3"]
+
+[node name="Jukebox" type="Node"]
+script = ExtResource("1_bfdbo")
+
+[node name="GameSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_gj6v5")
+
+[node name="TitleSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_o4t2w")
+
+[node name="LossSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tp4aa")
+
+[node name="WinSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1uag3")

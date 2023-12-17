@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://b68e0ly4odl8h"]
+
+[ext_resource type="Script" path="res://common/sfx.gd" id="1_xystl"]
+[ext_resource type="AudioStream" uid="uid://pfsvhoy5gxsw" path="res://common/launch.wav" id="2_sdtk4"]
+[ext_resource type="AudioStream" uid="uid://bkhmvqmrgwshm" path="res://common/match.wav" id="3_imji8"]
+[ext_resource type="AudioStream" uid="uid://4d7tp1bjfgo2" path="res://common/hit.wav" id="4_v31qb"]
+[ext_resource type="AudioStream" uid="uid://csdn6isjxeb7r" path="res://common/alarm.wav" id="5_d3spf"]
+
+[node name="SFX" type="Node"]
+script = ExtResource("1_xystl")
+
+[node name="LaunchSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sdtk4")
+
+[node name="MatchSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_imji8")
+
+[node name="NoMatchSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v31qb")
+
+[node name="AlarmSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_d3spf")
