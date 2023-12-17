@@ -8,10 +8,6 @@ signal move_down_requested
 const _REQUIRED_MATCHES : int = 3
 const _MOVE_DOWN_AMOUNT : int = 75
 
-
-var _starting_target : Target
-var _neighbors_to_search : Array[Area2D]
-var _viable_options : Array[Target]
 var _desired_type # Enum
 
 
@@ -37,7 +33,6 @@ func handle_hit(ball : Ball, first_hit : Target) -> void:
 		SFX.play_match_sound()
 	else:
 		SFX.play_no_match_sound()
-
 
 
 func _on_ball_stopper_body_entered(body) -> void:

@@ -20,11 +20,6 @@ func set_color(color) -> void:
 	Congruent.modulate_to_correct_color($Ball, Congruent.Types.get(color))
 
 
-func get_neighbors() -> Array[Area2D]:
-	var touching_list : Array[Area2D] = $NeighborDetector.get_overlapping_areas()
-	return touching_list
-
-
 func _on_ball_stopper_body_entered(body):
 	if is_instance_of(body, Ball):
 		get_parent().handle_hit(body, self)
