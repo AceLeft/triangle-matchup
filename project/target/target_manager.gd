@@ -12,7 +12,7 @@ const _MOVE_DOWN_AMOUNT : int = 75
 var _starting_target : Target
 var _neighbors_to_search : Array[Area2D]
 var _viable_options : Array[Target]
-var _desired_color # Enum
+var _desired_type # Enum
 
 
 func _process(_delta) -> void:
@@ -31,49 +31,10 @@ func move_down() -> void:
 
 
 func handle_hit(ball : Ball, first_hit : Target) -> void:
-	_set_variables(ball, first_hit)
-	if first_hit.ball_color == _desired_color:
-		_find_viable_options()
-	_determine_match()
-
-
-func _set_variables(ball : Ball, first_hit : Target) -> void:
-	_starting_target = _replace_ball_with_target(ball)
-	_neighbors_to_search = first_hit.get_neighbors()
-	_viable_options = [_starting_target]
-	_desired_color = _starting_target.ball_color
-
-
-func _replace_ball_with_target(ball : Ball) -> Target:
-	ball.set_velocity_to_zero()
-	var new_target : Target = load("res://target/target.tscn").instantiate()
-	new_target.set_color(ball.ball_color)
-	call_deferred("add_child",new_target)
-	new_target.call_deferred("set_global_position", ball.global_position)
+	_desired_type = ball.type
 	ball.call_deferred("queue_free")
-	return new_target
-
-
-func _find_viable_options() -> void:
-	var i := 0
-	while i < _neighbors_to_search.size():
-		var target : Target = _neighbors_to_search[i].get_parent()
-		if target.ball_color == _desired_color:
-			_viable_options.append(target)
-			var new_neighbors : Array[Area2D] = target.get_neighbors()
-			for neighbor in new_neighbors:
-				var neighbor_not_already_searched := !_neighbors_to_search.has(neighbor)
-				var neighbor_same_color : bool = neighbor.get_parent().ball_color == _desired_color
-				if  neighbor_not_already_searched and neighbor_same_color:
-					_neighbors_to_search.append(neighbor)
-		i = i + 1
-
-
-func _determine_match() -> void:
-	if _viable_options.size() >= _REQUIRED_MATCHES:
+	if first_hit.type == _desired_type:
 		SFX.play_match_sound()
-		for target in _viable_options:
-			target.call_deferred("queue_free")
 	else:
 		SFX.play_no_match_sound()
 
@@ -81,7 +42,8 @@ func _determine_match() -> void:
 
 func _on_ball_stopper_body_entered(body) -> void:
 	if is_instance_of(body, Ball):
-		_replace_ball_with_target(body)
+		body.call_deferred("queue_free")
+		SFX.play_no_match_sound()
 
 
 func _on_move_down_timer_timeout() -> void:

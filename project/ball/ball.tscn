@@ -37,6 +37,7 @@ scale_amount_curve = SubResource("Curve_yxl2g")
 color_ramp = SubResource("Gradient_7qj34")
 
 [node name="Ball" type="Sprite2D" parent="."]
+modulate = Color(0.415686, 0.435294, 0.45098, 1)
 position = Vector2(0, -1)
 texture = ExtResource("2_nel08")
 

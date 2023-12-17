@@ -2,12 +2,12 @@ class_name Ball
 extends RigidBody2D
 
 
-@onready var ball_color
+@onready var type
 
 
-func set_ball_color(chosen_color) -> void:
-	ball_color = Colors.ColorNames.find_key(chosen_color)
-	Colors.modulate_to_correct_color($Ball, chosen_color)
+func set_type(chosen_type) -> void:
+	type = Congruent.Types.find_key(chosen_type)
+	Congruent.modulate_to_correct_color($Ball, chosen_type)
 	$CPUParticles2D.modulate = $Ball.modulate
 
 

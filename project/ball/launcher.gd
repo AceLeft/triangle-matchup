@@ -9,7 +9,7 @@ const _LEFT_MAX_ANGLE := deg_to_rad(-87)
 const _RIGHT_MAX_ANGLE := deg_to_rad(87)
 
 
-var _next_color
+var _next_type
 var _launched := false
 var _allowed_to_launch := true
 var _ball : Ball
@@ -23,8 +23,8 @@ var _direction : Vector2
 func _ready() -> void:
 	_launched = true
 	_spawn_timer.start()
-	_next_color = randi() % Colors.ColorNames.size()
-	Colors.modulate_to_correct_color(_next_ball, _next_color)
+	_next_type = randi() % Congruent.Types.size()
+	Congruent.modulate_to_correct_color(_next_ball, _next_type)
 
 
 func _process(delta : float) -> void:
@@ -64,25 +64,25 @@ func disable() -> void:
 
 func _make_new_ball() -> void:
 	_ball = preload("res://ball/ball.tscn").instantiate()
-	_ball.set_ball_color(_next_color)
+	_ball.set_type(_next_type)
 	_launched = false
 	call_deferred("add_child", _ball)
-	Colors.modulate_to_correct_color($Cannon/Arrow, _next_color)
+	Congruent.modulate_to_correct_color($Cannon/Arrow, _next_type)
 
 
 func _on_spawn_timer_timeout() -> void:
 	_make_new_ball()
 	_launched = false
-	_next_color = _choose_available_color()
-	Colors.modulate_to_correct_color(_next_ball, _next_color)
+	_next_type = _choose_available_type()
+	Congruent.modulate_to_correct_color(_next_ball, _next_type)
 
 
-func _choose_available_color() -> int:
+func _choose_available_type() -> int:
 	var target_array = get_tree().get_nodes_in_group("targets")
-	var random_color = "ORANGE"
+	var random_type = "NOT"
 	if target_array.size() > 0:
-		random_color = target_array.pick_random().ball_color
-	return Colors.ColorNames.get(random_color)
+		random_type = target_array.pick_random().type
+	return Congruent.Types.get(random_type)
 
 
 func _on_spring_animation_finished() -> void:

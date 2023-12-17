@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 SFX="*res://common/sfx.tscn"
 Jukebox="*res://common/jukebox.tscn"
-Colors="*res://common/colors.gd"
+Congruent="*res://common/congruent.gd"
 EndCondition="*res://common/end_condition.gd"
 
 [display]
