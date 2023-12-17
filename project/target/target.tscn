@@ -16,7 +16,7 @@ gravity_scale = 0.0
 freeze = true
 script = ExtResource("1_vs068")
 
-[node name="Ball" type="Sprite2D" parent="."]
+[node name="Triangles" type="Sprite2D" parent="."]
 modulate = Color(0.376471, 0, 0.835294, 1)
 texture = ExtResource("2_67ufh")
 
