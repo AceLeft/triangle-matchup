@@ -30,6 +30,7 @@ func handle_hit(ball : Ball, first_hit : Target) -> void:
 	_desired_type = ball.type
 	ball.call_deferred("queue_free")
 	if first_hit.type == _desired_type:
+		first_hit.call_deferred("queue_free")
 		SFX.play_match_sound()
 	else:
 		SFX.play_no_match_sound()
