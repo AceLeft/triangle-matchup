@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6vvcs05fetqx"]
 
 [ext_resource type="Script" path="res://target/target.gd" id="1_vs068"]
-[ext_resource type="Texture2D" uid="uid://b647vnlgye7hi" path="res://common/ball.png" id="2_67ufh"]
+[ext_resource type="Texture2D" uid="uid://brgv6oiuwf84o" path="res://target/aas1.png" id="2_qh0ys"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ham0x"]
-radius = 38.0132
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20dht"]
+size = Vector2(160, 160)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g8wxf"]
-radius = 40.05
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5kf4"]
+size = Vector2(165, 165)
 
 [node name="Target" type="RigidBody2D" groups=["targets"]]
 collision_layer = 2
@@ -18,14 +18,14 @@ script = ExtResource("1_vs068")
 
 [node name="Triangles" type="Sprite2D" parent="."]
 modulate = Color(0.376471, 0, 0.835294, 1)
-texture = ExtResource("2_67ufh")
+texture = ExtResource("2_qh0ys")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ham0x")
+shape = SubResource("RectangleShape2D_20dht")
 
 [node name="BallStopper" type="Area2D" parent="."]
 
 [node name="CollisionShape" type="CollisionShape2D" parent="BallStopper"]
-shape = SubResource("CircleShape2D_g8wxf")
+shape = SubResource("RectangleShape2D_r5kf4")
 
 [connection signal="body_entered" from="BallStopper" to="." method="_on_ball_stopper_body_entered"]
