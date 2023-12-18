@@ -9,6 +9,7 @@ func set_type(chosen_type) -> void:
 	type = Congruent.Types.find_key(chosen_type)
 	Congruent.modulate_to_correct_color($Ball, chosen_type)
 	$CPUParticles2D.modulate = $Ball.modulate
+	$TypeLabel.text = type
 
 
 func set_velocity_to_zero() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpkf2370ojung"]
+[gd_scene load_steps=8 format=3 uid="uid://bpkf2370ojung"]
 
 [ext_resource type="Script" path="res://ball/ball.gd" id="1_iwiw3"]
 [ext_resource type="Texture2D" uid="uid://b647vnlgye7hi" path="res://common/ball.png" id="2_nel08"]
@@ -16,6 +16,11 @@ point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_7qj34"]
 colors = PackedColorArray(1, 1, 1, 0.843137, 1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pct1h"]
+font_size = 21
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Ball" type="RigidBody2D" groups=["balls"]]
 collision_mask = 6
@@ -40,5 +45,15 @@ color_ramp = SubResource("Gradient_7qj34")
 modulate = Color(0.415686, 0.435294, 0.45098, 1)
 position = Vector2(0, -1)
 texture = ExtResource("2_nel08")
+
+[node name="TypeLabel" type="Label" parent="."]
+offset_left = -28.0
+offset_top = -17.0
+offset_right = 28.0
+offset_bottom = 16.0
+text = "hello"
+label_settings = SubResource("LabelSettings_pct1h")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
