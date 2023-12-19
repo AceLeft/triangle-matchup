@@ -36,6 +36,20 @@ func handle_hit(ball : Ball, first_hit : Target) -> void:
 		SFX.play_no_match_sound()
 
 
+func set_sprite_to_random_triangles(sprite :Sprite2D, desired_type : String) -> void:
+	# It is expected that the images follow these conventions:
+	# 1. Begin with a lowercase version of their type
+	# 2. The name ends in a number 1-4
+	# 3. Is a .png
+	# 4. They are located inside the target folder
+	var texture_node := get_node("TriangleImages/" + desired_type + str(randi_range(1,4)))
+#	if texture_node.has_method("set_texture"):
+#
+#	else:
+#		sprite.texture = $TriangleImages/AAS1.texture
+	sprite.texture = texture_node.texture
+
+
 func _on_ball_stopper_body_entered(body) -> void:
 	if is_instance_of(body, Ball):
 		body.call_deferred("queue_free")

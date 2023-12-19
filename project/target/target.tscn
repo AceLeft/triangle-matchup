@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6vvcs05fetqx"]
+[gd_scene load_steps=4 format=3 uid="uid://c6vvcs05fetqx"]
 
 [ext_resource type="Script" path="res://target/target.gd" id="1_vs068"]
-[ext_resource type="Texture2D" uid="uid://brgv6oiuwf84o" path="res://target/aas1.png" id="2_qh0ys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20dht"]
 size = Vector2(160, 160)
@@ -17,7 +16,6 @@ freeze = true
 script = ExtResource("1_vs068")
 
 [node name="Triangles" type="Sprite2D" parent="."]
-texture = ExtResource("2_qh0ys")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_20dht")

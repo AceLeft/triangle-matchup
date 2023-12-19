@@ -1,8 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://btkcf71y1d2ma"]
+[gd_scene load_steps=29 format=3 uid="uid://btkcf71y1d2ma"]
 
 [ext_resource type="Script" path="res://target/target_manager.gd" id="1_aj3yn"]
 [ext_resource type="PackedScene" uid="uid://c6vvcs05fetqx" path="res://target/target.tscn" id="2_1fhgn"]
 [ext_resource type="Texture2D" uid="uid://ypp561fwtywm" path="res://common/arrow.png" id="3_2tslh"]
+[ext_resource type="Texture2D" uid="uid://brgv6oiuwf84o" path="res://target/aas1.png" id="4_oe1lf"]
+[ext_resource type="Texture2D" uid="uid://c8cc3174p2jvc" path="res://target/aas2.png" id="5_wmge0"]
+[ext_resource type="Texture2D" uid="uid://cg8unqvyt8wwd" path="res://target/aas3.png" id="6_kyiqf"]
+[ext_resource type="Texture2D" uid="uid://uphw1uyeg7ci" path="res://target/aas4.png" id="7_boadg"]
+[ext_resource type="Texture2D" uid="uid://bmpvsr2pydgks" path="res://target/sas1.png" id="8_f2ruf"]
+[ext_resource type="Texture2D" uid="uid://bb255xwi53acu" path="res://target/sas2.png" id="9_tioyi"]
+[ext_resource type="Texture2D" uid="uid://crmnmlb7hpv4r" path="res://target/sas3.png" id="10_m1ks7"]
+[ext_resource type="Texture2D" uid="uid://dj5gq5j6vlk63" path="res://target/sas4.png" id="11_8ouqo"]
+[ext_resource type="Texture2D" uid="uid://dh2yfwt4tr70" path="res://target/hl1.png" id="12_j30vs"]
+[ext_resource type="Texture2D" uid="uid://bwhdjhdhifdbo" path="res://target/hl2.png" id="13_0blot"]
+[ext_resource type="Texture2D" uid="uid://bghka0syxgr68" path="res://target/hl3.png" id="14_cf4ad"]
+[ext_resource type="Texture2D" uid="uid://c7a6jfk4qlqwh" path="res://target/hl4.png" id="15_tauhc"]
+[ext_resource type="Texture2D" uid="uid://dr7ehfyan0oj7" path="res://target/not1.png" id="16_ndxfk"]
+[ext_resource type="Texture2D" uid="uid://0dbb3mm2v04b" path="res://target/not2.png" id="17_c28dy"]
+[ext_resource type="Texture2D" uid="uid://by7h6ry3h8vlp" path="res://target/not3.png" id="18_lwgtr"]
+[ext_resource type="Texture2D" uid="uid://cnucsl4on11ml" path="res://target/not4.png" id="19_31m1i"]
+[ext_resource type="Texture2D" uid="uid://cjygbeqtiajcm" path="res://target/sss1.png" id="20_ni3tf"]
+[ext_resource type="Texture2D" uid="uid://cgm6shpjkcsa3" path="res://target/sss2.png" id="21_0ma4d"]
+[ext_resource type="Texture2D" uid="uid://b6xsf3ee6yi63" path="res://target/sss3.png" id="22_t8nrk"]
+[ext_resource type="Texture2D" uid="uid://cq0ms4h2ofapl" path="res://target/sss4.png" id="23_4qj8g"]
+[ext_resource type="Texture2D" uid="uid://cs7dpurkrqf3m" path="res://target/asa1.png" id="24_trc1j"]
+[ext_resource type="Texture2D" uid="uid://bftwirsybgy4k" path="res://target/asa3.png" id="25_xjcli"]
+[ext_resource type="Texture2D" uid="uid://b236kumb2yk6i" path="res://target/asa4.png" id="26_11thl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf7ky"]
 size = Vector2(586, 67)
@@ -101,6 +124,156 @@ flip_v = true
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="TriangleImages" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AAS1" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("4_oe1lf")
+
+[node name="AAS2" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("5_wmge0")
+
+[node name="AAS3" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("6_kyiqf")
+
+[node name="AAS4" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("7_boadg")
+
+[node name="SAS1" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("8_f2ruf")
+
+[node name="SAS2" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("9_tioyi")
+
+[node name="SAS3" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("10_m1ks7")
+
+[node name="SAS4" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("11_8ouqo")
+
+[node name="HL1" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("12_j30vs")
+
+[node name="HL2" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("13_0blot")
+
+[node name="HL3" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("14_cf4ad")
+
+[node name="HL4" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("15_tauhc")
+
+[node name="NOT1" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("16_ndxfk")
+
+[node name="NOT2" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("17_c28dy")
+
+[node name="NOT3" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("18_lwgtr")
+
+[node name="NOT4" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("19_31m1i")
+
+[node name="SSS1" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("20_ni3tf")
+
+[node name="SSS2" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("21_0ma4d")
+
+[node name="SSS3" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("22_t8nrk")
+
+[node name="SSS4" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("23_4qj8g")
+
+[node name="ASA1" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("24_trc1j")
+
+[node name="ASA2" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("9_tioyi")
+
+[node name="ASA3" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("25_xjcli")
+
+[node name="ASA4" type="TextureRect" parent="TriangleImages"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("26_11thl")
 
 [connection signal="body_entered" from="Net/BallStopper" to="." method="_on_ball_stopper_body_entered"]
 [connection signal="timeout" from="MoveDownTimer" to="." method="_on_move_down_timer_timeout"]

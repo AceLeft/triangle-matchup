@@ -11,7 +11,9 @@ func _ready() -> void:
 	if type == null:
 		var chosen_type = randi() % Congruent.Types.size()
 		type = Congruent.Types.find_key(chosen_type)
-		Congruent.set_sprite_to_random_triangles(_sprite, type)
+		get_parent().set_sprite_to_random_triangles(_sprite, type)
+
+
 
 
 func _on_ball_stopper_body_entered(body):
