@@ -9,23 +9,24 @@ anchors_preset = 0
 script = ExtResource("1_febv4")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(290, 450)
+position = Vector2(459.5, 450)
+scale = Vector2(1.58448, 1)
 texture = ExtResource("2_7mnnt")
 
 [node name="PlayAgainButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 253.0
+offset_left = 412.0
 offset_top = 442.0
-offset_right = 341.0
+offset_right = 500.0
 offset_bottom = 473.0
 text = "Play Again"
 
 [node name="WonLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 164.0
-offset_top = 303.0
-offset_right = 449.0
-offset_bottom = 394.0
+offset_left = 318.0
+offset_top = 313.0
+offset_right = 603.0
+offset_bottom = 404.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 

@@ -19,41 +19,42 @@ anchors_preset = 0
 script = ExtResource("1_rhrit")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(290, 450)
+position = Vector2(449, 294)
+scale = Vector2(1.55517, 1)
 texture = ExtResource("2_tuou6")
 
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 200.0
-offset_top = 406.0
-offset_right = 390.0
-offset_bottom = 489.0
+offset_left = 350.0
+offset_top = 167.0
+offset_right = 540.0
+offset_bottom = 250.0
 texture_normal = ExtResource("2_qjk2i")
 texture_pressed = ExtResource("3_fk6wg")
 
 [node name="QuitButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 200.0
-offset_top = 500.0
-offset_right = 390.0
-offset_bottom = 583.0
+offset_left = 350.0
+offset_top = 261.0
+offset_right = 540.0
+offset_bottom = 344.0
 texture_normal = ExtResource("4_ilkxf")
 texture_pressed = ExtResource("5_aow15")
 
 [node name="CreditsButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 33.0
-offset_top = 685.0
-offset_right = 184.0
-offset_bottom = 832.0
+offset_left = 183.0
+offset_top = 446.0
+offset_right = 334.0
+offset_bottom = 593.0
 texture_normal = ExtResource("8_hl7sa")
 
 [node name="HowToPlayButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 393.0
-offset_top = 685.0
-offset_right = 544.0
-offset_bottom = 832.0
+offset_left = 543.0
+offset_top = 446.0
+offset_right = 694.0
+offset_bottom = 593.0
 texture_normal = ExtResource("9_eh4mw")
 
 [node name="LabelBox" type="ColorRect" parent="."]
@@ -64,10 +65,12 @@ anchor_left = -0.639
 anchor_top = 0.214
 anchor_right = -0.639
 anchor_bottom = 0.214
-offset_left = -1.0
-offset_top = 359.0
-offset_right = 580.0
-offset_bottom = 830.0
+offset_left = 160.0
+offset_top = 136.0
+offset_right = 741.0
+offset_bottom = 607.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="OKButton" type="Button" parent="LabelBox"]
 layout_mode = 0
