@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6vvcs05fetqx"]
+[gd_scene load_steps=6 format=3 uid="uid://c6vvcs05fetqx"]
 
 [ext_resource type="Script" path="res://target/target.gd" id="1_vs068"]
 [ext_resource type="Texture2D" uid="uid://brgv6oiuwf84o" path="res://target/aas1.png" id="2_qb3hg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l2ft0"]
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20dht"]
 size = Vector2(160, 160)
@@ -18,6 +21,14 @@ script = ExtResource("1_vs068")
 
 [node name="Triangles" type="Sprite2D" parent="."]
 texture = ExtResource("2_qb3hg")
+
+[node name="TypeLabel" type="Label" parent="Triangles"]
+offset_left = -74.0
+offset_top = 31.0
+offset_right = 73.0
+offset_bottom = 57.0
+text = "FOR DEBUG USAGE"
+label_settings = SubResource("LabelSettings_l2ft0")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_20dht")

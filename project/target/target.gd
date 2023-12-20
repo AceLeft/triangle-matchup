@@ -12,6 +12,7 @@ func _ready() -> void:
 		var chosen_type = randi() % Congruent.Types.size()
 		type = Congruent.Types.find_key(chosen_type)
 		get_parent().set_sprite_to_random_triangles(_sprite, type)
+		$Triangles/TypeLabel.text = type
 
 
 

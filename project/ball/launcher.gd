@@ -9,22 +9,18 @@ const _LEFT_MAX_ANGLE := deg_to_rad(-87)
 const _RIGHT_MAX_ANGLE := deg_to_rad(87)
 
 
-var _next_type
 var _launched := false
 var _allowed_to_launch := true
 var _ball : Ball
 var _direction : Vector2
 @onready var _cannon : Node2D = $Cannon
-@onready var _spawn_timer : Timer = $SpawnTimer
+@onready var _spawn_timer : Timer = $InitialSpawnTimer
 @onready var _launch_animation : AnimatedSprite2D = $Cannon/Spring
-@onready var _next_ball : Sprite2D = $NextBall
 
 
 func _ready() -> void:
 	_launched = true
 	_spawn_timer.start()
-	_next_type = randi() % Congruent.Types.size()
-	Congruent.modulate_to_correct_color(_next_ball, _next_type)
 
 
 func _process(delta : float) -> void:
@@ -64,17 +60,17 @@ func disable() -> void:
 
 func _make_new_ball() -> void:
 	_ball = preload("res://ball/ball.tscn").instantiate()
-	_ball.set_type(_next_type)
+	_ball.connect("destroyed", _make_new_ball)
+	var new_type : int = _choose_available_type()
+	_ball.set_type(new_type)
 	_launched = false
 	call_deferred("add_child", _ball)
-	Congruent.modulate_to_correct_color($Cannon/Arrow, _next_type)
+	Congruent.modulate_to_correct_color($Cannon/Arrow, new_type)
 
 
 func _on_spawn_timer_timeout() -> void:
 	_make_new_ball()
 	_launched = false
-	_next_type = _choose_available_type()
-	Congruent.modulate_to_correct_color(_next_ball, _next_type)
 
 
 func _choose_available_type() -> int:
@@ -88,6 +84,5 @@ func _choose_available_type() -> int:
 func _on_spring_animation_finished() -> void:
 	_ball.apply_impulse(_direction * _FORCE)
 	_launched = true
-	_spawn_timer.start()
 	SFX.play_launch_sound()
 	_launch_animation.frame = 0

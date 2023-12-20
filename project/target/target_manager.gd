@@ -28,13 +28,15 @@ func move_down() -> void:
 
 func handle_hit(ball : Ball, first_hit : Target) -> void:
 	_desired_type = ball.type
-	ball.call_deferred("queue_free")
 	if first_hit.type == _desired_type:
+		# Remove the target from its group ASAP
+		first_hit.remove_from_group("targets")
 		first_hit.call_deferred("queue_free")
 		SFX.play_match_sound()
 	else:
 		SFX.play_no_match_sound()
-
+	# Delete the Ball last for processing order
+	ball.delete_self()
 
 func set_sprite_to_random_triangles(sprite :Sprite2D, desired_type : String) -> void:
 	var texture_node := get_node("TriangleImages/" + desired_type + str(randi_range(1,4)))
@@ -43,7 +45,7 @@ func set_sprite_to_random_triangles(sprite :Sprite2D, desired_type : String) -> 
 
 func _on_ball_stopper_body_entered(body) -> void:
 	if is_instance_of(body, Ball):
-		body.call_deferred("queue_free")
+		body.delete_self()
 		SFX.play_no_match_sound()
 
 
