@@ -2,6 +2,7 @@ extends Node2D
 
 
 signal targets_gone
+signal target_deleted
 signal move_down_requested
 
 
@@ -32,6 +33,7 @@ func handle_hit(ball : Ball, first_hit : Target) -> void:
 		# Remove the target from its group ASAP
 		first_hit.remove_from_group("targets")
 		first_hit.call_deferred("queue_free")
+		target_deleted.emit()
 		SFX.play_match_sound()
 	else:
 		SFX.play_no_match_sound()

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://6mf1lmbgamwt"]
+
+[ext_resource type="Script" path="res://ui/scoreboard.gd" id="1_erdmk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0fnqw"]
+font_size = 27
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Scoreboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_erdmk")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -41.0
+offset_right = 120.0
+offset_bottom = -1.0
+grow_vertical = 0
+text = "Score: X"
+label_settings = SubResource("LabelSettings_0fnqw")

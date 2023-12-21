@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://w0o47ad726ii"]
+[gd_scene load_steps=8 format=3 uid="uid://w0o47ad726ii"]
 
 [ext_resource type="Script" path="res://world/world.gd" id="1_a48bm"]
 [ext_resource type="PackedScene" uid="uid://cq2i47v4qf8v6" path="res://ball/launcher.tscn" id="2_qou6k"]
 [ext_resource type="PackedScene" uid="uid://btkcf71y1d2ma" path="res://target/target_manager.tscn" id="3_6mgrn"]
 [ext_resource type="Texture2D" uid="uid://c1ir1gyax7fju" path="res://world/fail_line.png" id="4_c4qcn"]
+[ext_resource type="PackedScene" uid="uid://6mf1lmbgamwt" path="res://ui/scoreboard.tscn" id="5_3s2o0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f085i"]
 size = Vector2(898, 148)
@@ -69,6 +70,18 @@ offset_right = -62.0
 offset_bottom = 901.0
 color = Color(0.364706, 0.364706, 0.364706, 1)
 
+[node name="Scoreboard" parent="." instance=ExtResource("5_3s2o0")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 3.0
+offset_top = 651.0
+offset_right = 3.0
+offset_bottom = 651.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [connection signal="area_entered" from="FailLine/FailLineArea" to="." method="_on_fail_line_area_area_entered"]
 [connection signal="move_down_requested" from="TargetManager" to="." method="_on_target_manager_move_down_requested"]
+[connection signal="target_deleted" from="TargetManager" to="." method="_on_target_manager_target_deleted"]
 [connection signal="targets_gone" from="TargetManager" to="." method="_on_target_manager_targets_gone"]

@@ -65,6 +65,7 @@ texture_normal = ExtResource("6_3gbws")
 action = "angle_left_key"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.815686)
 position = Vector2(228, 49)
 texture_normal = ExtResource("7_2vnhl")
 texture_pressed = ExtResource("8_abykf")
