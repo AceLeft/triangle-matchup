@@ -5,7 +5,7 @@ Further modifications to turn Ball Technology into Ms Wright's Triangle Matchup 
 
 ## Instructions
 Aim with A/D, or left/right arrow keys, or scrollwheel.
-Launch with spacebar or left click.
+Launch with spacebar.
 
 ## Third-Party Assets
 

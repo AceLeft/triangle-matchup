@@ -93,7 +93,7 @@ theme_override_font_sizes/font_size = 48
 text = "Objective: Clear all targets by launching balls and making matching groups of 3 or more. AVOID targets reaching the red line!
 Controls: 
 Change angle: A/D or Left/Right Arrow Keys or Scrollwheel
-Launch: Space or Left Click"
+Launch: Space"
 label_settings = SubResource("LabelSettings_8uxj5")
 horizontal_alignment = 1
 vertical_alignment = 1

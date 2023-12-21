@@ -35,7 +35,7 @@ position = Vector2(445, 89)
 shape = SubResource("RectangleShape2D_f085i")
 
 [node name="Launcher" parent="." instance=ExtResource("2_qou6k")]
-position = Vector2(454, 543)
+position = Vector2(454, 517)
 
 [node name="TargetManager" parent="." instance=ExtResource("3_6mgrn")]
 
