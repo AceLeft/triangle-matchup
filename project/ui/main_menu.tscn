@@ -1,17 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1vij04bt4g42"]
+[gd_scene load_steps=9 format=3 uid="uid://c1vij04bt4g42"]
 
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_rhrit"]
 [ext_resource type="Texture2D" uid="uid://dehsu60ms5763" path="res://ui/play_unpressed.png" id="2_qjk2i"]
 [ext_resource type="Texture2D" uid="uid://c44rxahyfu0w" path="res://ui/background.png" id="2_tuou6"]
 [ext_resource type="Texture2D" uid="uid://b41x52lfds2d" path="res://ui/play_pressed.png" id="3_fk6wg"]
-[ext_resource type="Texture2D" uid="uid://qq3c2pp16063" path="res://ui/quit_unpressed.png" id="4_ilkxf"]
-[ext_resource type="Texture2D" uid="uid://dlrg8bo3j4cck" path="res://ui/quit_pressed.png" id="5_aow15"]
 [ext_resource type="Texture2D" uid="uid://c1n8yvhxfc4hm" path="res://ui/credits.png" id="8_hl7sa"]
 [ext_resource type="Texture2D" uid="uid://j5bwpqdqrdij" path="res://ui/how_to_play.png" id="9_eh4mw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8uxj5"]
 font_size = 28
 font_color = Color(0, 0.113725, 0.192157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v3lak"]
+font_size = 64
+outline_size = 13
+outline_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -25,19 +28,11 @@ texture = ExtResource("2_tuou6")
 
 [node name="PlayButton" type="TextureButton" parent="."]
 offset_left = 421.0
-offset_top = 167.0
+offset_top = 280.0
 offset_right = 611.0
-offset_bottom = 250.0
+offset_bottom = 363.0
 texture_normal = ExtResource("2_qjk2i")
 texture_pressed = ExtResource("3_fk6wg")
-
-[node name="QuitButton" type="TextureButton" parent="."]
-offset_left = 421.0
-offset_top = 261.0
-offset_right = 611.0
-offset_bottom = 344.0
-texture_normal = ExtResource("4_ilkxf")
-texture_pressed = ExtResource("5_aow15")
 
 [node name="CreditsButton" type="TextureButton" parent="."]
 offset_left = 254.0
@@ -116,8 +111,26 @@ Win/ Loss song composer: Spring. Bicycle horn sound by AntumDeluge
 horizontal_alignment = 1
 autowrap_mode = 3
 
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 240.5
+offset_top = 68.0
+offset_right = 783.5
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ms Wright's
+Triangle Matchup"
+label_settings = SubResource("LabelSettings_v3lak")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="pressed" from="LabelBox/OKButton" to="." method="_on_ok_button_pressed"]

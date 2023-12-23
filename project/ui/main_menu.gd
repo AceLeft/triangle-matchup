@@ -8,6 +8,7 @@ extends Control
 
 func _ready() -> void:
 	Jukebox.play_title_song()
+	_tween_title_color()
 
 
 func _on_play_button_pressed() -> void:
@@ -16,6 +17,13 @@ func _on_play_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _tween_title_color() -> void:
+	var tween = create_tween()
+	var new_color = Color(randf(), randf(), randf())
+	tween.tween_property($Title, "modulate", new_color, .75)
+	tween.tween_callback(_tween_title_color)
 
 
 func _on_how_to_play_button_pressed() -> void:
