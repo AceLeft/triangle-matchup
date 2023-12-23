@@ -19,5 +19,7 @@ func _ready() -> void:
 
 func _on_ball_stopper_body_entered(body):
 	if is_instance_of(body, Ball):
+		# It is the assumption that the Targets 
+		# Are children of TargetManager
 		get_parent().handle_hit(body, self)
 

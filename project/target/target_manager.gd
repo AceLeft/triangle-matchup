@@ -11,6 +11,12 @@ const _MOVE_DOWN_AMOUNT : int = 75
 
 var _desired_type # Enum
 
+@onready var _target_scene = preload("res://target/target.tscn")
+
+
+func _ready() -> void:
+	_make_targets_on_markers()
+
 
 func _process(_delta) -> void:
 	if get_tree().get_nodes_in_group("targets").size() ==0:
@@ -43,6 +49,15 @@ func handle_hit(ball : Ball, first_hit : Target) -> void:
 func set_sprite_to_random_triangles(sprite :Sprite2D, desired_type : String) -> void:
 	var texture_node := get_node("TriangleImages/" + desired_type + str(randi_range(1,4)))
 	sprite.texture = texture_node.texture
+
+
+func _make_targets_on_markers() -> void:
+	for i in range(1,5):
+		var target : Target = _target_scene.instantiate()
+		var marker_node = get_node("TargetMarker" + str(i))
+		target.global_position = marker_node.global_position
+		call_deferred("add_child", target)
+	
 
 
 func _on_ball_stopper_body_entered(body) -> void:

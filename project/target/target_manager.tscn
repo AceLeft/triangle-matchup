@@ -1,7 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://btkcf71y1d2ma"]
+[gd_scene load_steps=28 format=3 uid="uid://btkcf71y1d2ma"]
 
 [ext_resource type="Script" path="res://target/target_manager.gd" id="1_aj3yn"]
-[ext_resource type="PackedScene" uid="uid://c6vvcs05fetqx" path="res://target/target.tscn" id="2_1fhgn"]
 [ext_resource type="Texture2D" uid="uid://ypp561fwtywm" path="res://common/arrow.png" id="3_2tslh"]
 [ext_resource type="Texture2D" uid="uid://brgv6oiuwf84o" path="res://target/aas1.png" id="4_oe1lf"]
 [ext_resource type="Texture2D" uid="uid://c8cc3174p2jvc" path="res://target/aas2.png" id="5_wmge0"]
@@ -37,23 +36,17 @@ size = Vector2(898, 20)
 position = Vector2(0, 20)
 script = ExtResource("1_aj3yn")
 
-[node name="Target" parent="." instance=ExtResource("2_1fhgn")]
-position = Vector2(354, 106)
-
-[node name="Target2" parent="." instance=ExtResource("2_1fhgn")]
-position = Vector2(546, 106)
-
-[node name="Target3" parent="." instance=ExtResource("2_1fhgn")]
-position = Vector2(737, 106)
-
-[node name="Target4" parent="." instance=ExtResource("2_1fhgn")]
+[node name="TargetMarker1" type="Marker2D" parent="."]
 position = Vector2(162, 106)
 
-[node name="Target5" parent="." instance=ExtResource("2_1fhgn")]
-position = Vector2(95, 356)
+[node name="TargetMarker2" type="Marker2D" parent="."]
+position = Vector2(354, 106)
 
-[node name="Target6" parent="." instance=ExtResource("2_1fhgn")]
-position = Vector2(782, 356)
+[node name="TargetMarker3" type="Marker2D" parent="."]
+position = Vector2(546, 106)
+
+[node name="TargetMarker4" type="Marker2D" parent="."]
+position = Vector2(737, 106)
 
 [node name="Net" type="RigidBody2D" parent="."]
 position = Vector2(39, 0)
