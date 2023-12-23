@@ -34,8 +34,16 @@ label_settings = SubResource("LabelSettings_l2ft0")
 shape = SubResource("RectangleShape2D_20dht")
 
 [node name="BallStopper" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape" type="CollisionShape2D" parent="BallStopper"]
 shape = SubResource("RectangleShape2D_r5kf4")
+
+[node name="FailLineDetector" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape" type="CollisionShape2D" parent="FailLineDetector"]
+shape = SubResource("RectangleShape2D_20dht")
 
 [connection signal="body_entered" from="BallStopper" to="." method="_on_ball_stopper_body_entered"]
