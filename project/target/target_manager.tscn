@@ -27,10 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://b236kumb2yk6i" path="res://target/asa4.png" id="26_11thl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf7ky"]
-size = Vector2(995.5, 67)
+size = Vector2(1000, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sb5e2"]
-size = Vector2(997, 22)
+size = Vector2(1000, 22)
 
 [node name="TargetManager" type="Node2D"]
 position = Vector2(0, 20)
@@ -81,13 +81,12 @@ offset_bottom = 80.0
 color = Color(0, 0, 0, 1)
 
 [node name="Net" type="RigidBody2D" parent="."]
-position = Vector2(39, 0)
 collision_layer = 4
 collision_mask = 2
 gravity_scale = 0.0
 
 [node name="NetCollision" type="CollisionShape2D" parent="Net"]
-position = Vector2(463.25, -34)
+position = Vector2(500, -34)
 shape = SubResource("RectangleShape2D_jf7ky")
 one_way_collision = true
 
@@ -95,7 +94,7 @@ one_way_collision = true
 collision_layer = 4
 
 [node name="BallStopperCollision" type="CollisionShape2D" parent="Net/BallStopper"]
-position = Vector2(462.5, 1)
+position = Vector2(500, 1)
 shape = SubResource("RectangleShape2D_sb5e2")
 
 [node name="ColorRect" type="ColorRect" parent="Net/BallStopper/BallStopperCollision"]
@@ -152,7 +151,7 @@ texture = ExtResource("3_2tslh")
 flip_v = true
 
 [node name="MoveDownTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 

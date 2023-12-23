@@ -13,6 +13,7 @@ var _num_markers := 0
 
 @onready var _target_scene := preload("res://target/target.tscn")
 @onready var _target_mover = $Net
+@onready var _timer = $MoveDownTimer
 
 
 func _ready() -> void:
@@ -25,7 +26,8 @@ func _ready() -> void:
 
 func _process(_delta) -> void:
 	if get_tree().get_nodes_in_group("targets").size() ==0:
-		targets_gone.emit()
+		_reset_to_beginning()
+#		targets_gone.emit()
 
 
 func handle_hit(ball : Ball, first_hit : Target) -> void:
@@ -45,6 +47,14 @@ func handle_hit(ball : Ball, first_hit : Target) -> void:
 func set_sprite_to_random_triangles(sprite :Sprite2D, desired_type : String) -> void:
 	var texture_node := get_node("TriangleImages/" + desired_type + str(randi_range(1,4)))
 	sprite.texture = texture_node.texture
+
+
+func _reset_to_beginning() -> void:
+	_target_mover.global_position = Vector2.ZERO
+	print(_timer.time_left)
+	_timer.start()
+	print(_timer.time_left)
+	_make_targets_on_markers()
 
 
 func _make_targets_on_markers() -> void:
@@ -76,9 +86,9 @@ func _request_move_down() -> void:
 
 func _move_down() -> void:
 	for child in get_children():
-		if "global_position" in child:
+		if is_instance_of(child, RigidBody2D):
 			var tween = create_tween()
 			var target_x = child.global_position.x
 			var target_y = child.global_position.y+_MOVE_DOWN_AMOUNT
 			tween.tween_property(child, "global_position", Vector2(target_x, target_y), .25)
-	$MoveDownTimer.start()
+	_timer.start()
