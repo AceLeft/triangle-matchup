@@ -4,6 +4,7 @@ extends Node2D
 const _SCORE_INCREASE_AMOUNT := 200
 
 @onready var _score_keeper = $Scoreboard
+@onready var _quit_screen : ColorRect = $QuitScreen
 
 
 func _ready() -> void:
@@ -29,3 +30,19 @@ func _on_fail_line_area_area_entered(area : Area2D) -> void:
 	if is_instance_of(area_parent, Target):
 		EndCondition.won = false
 		_go_to_end_screen()
+
+
+func _on_quit_button_pressed() -> void:
+	_quit_screen.show()
+	get_tree().paused = true
+
+
+func _on_return_button_pressed() -> void:
+	_quit_screen.hide()
+	get_tree().paused = false
+
+
+func _on_exit_button_pressed() -> void:
+	EndCondition.won = true
+	get_tree().paused = false
+	_go_to_end_screen()

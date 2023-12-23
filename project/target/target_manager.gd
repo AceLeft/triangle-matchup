@@ -12,8 +12,8 @@ var _desired_type # Enum
 var _num_markers := 0
 
 @onready var _target_scene := preload("res://target/target.tscn")
-@onready var _target_mover = $Net
-@onready var _timer = $MoveDownTimer
+@onready var _target_mover : RigidBody2D = $Net
+@onready var _timer : Timer = $MoveDownTimer
 
 
 func _ready() -> void:
@@ -51,9 +51,7 @@ func set_sprite_to_random_triangles(sprite :Sprite2D, desired_type : String) -> 
 
 func _reset_to_beginning() -> void:
 	_target_mover.global_position = Vector2.ZERO
-	print(_timer.time_left)
 	_timer.start()
-	print(_timer.time_left)
 	_make_targets_on_markers()
 
 
@@ -86,6 +84,7 @@ func _request_move_down() -> void:
 
 func _move_down() -> void:
 	for child in get_children():
+		# Both Targets and the Target Mover are RigidiBodies
 		if is_instance_of(child, RigidBody2D):
 			var tween = create_tween()
 			var target_x = child.global_position.x
