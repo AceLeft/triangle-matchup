@@ -23,6 +23,7 @@ script = ExtResource("1_vs068")
 texture = ExtResource("2_qb3hg")
 
 [node name="TypeLabel" type="Label" parent="Triangles"]
+visible = false
 offset_left = -74.0
 offset_top = 31.0
 offset_right = 73.0
