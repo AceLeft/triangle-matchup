@@ -56,6 +56,7 @@ position = Vector2(185, 64)
 rotation = 1.5708
 texture_normal = ExtResource("6_3gbws")
 action = "angle_right_key"
+visibility_mode = 1
 
 [node name="TouchScreenLeft" type="TouchScreenButton" parent="."]
 modulate = Color(0.207843, 0.486275, 0.643137, 0.815686)
@@ -63,6 +64,7 @@ position = Vector2(-185, 128)
 rotation = -1.5708
 texture_normal = ExtResource("6_3gbws")
 action = "angle_left_key"
+visibility_mode = 1
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.815686)
@@ -70,6 +72,7 @@ position = Vector2(228, 49)
 texture_normal = ExtResource("7_2vnhl")
 texture_pressed = ExtResource("8_abykf")
 action = "launch"
+visibility_mode = 1
 
 [connection signal="timeout" from="InitialSpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="Cannon/Spring" to="." method="_on_spring_animation_finished"]
