@@ -3,9 +3,6 @@ extends Node2D
 
 const _SCORE_INCREASE_AMOUNT := 200
 
-var _check_launcher := false
-
-@onready var _launcher : Launcher = $Launcher
 @onready var _score_keeper = $Scoreboard
 
 

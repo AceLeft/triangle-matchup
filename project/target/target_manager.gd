@@ -3,7 +3,6 @@ extends Node2D
 
 signal targets_gone
 signal target_deleted
-signal move_down_requested
 
 
 const _REQUIRED_MATCHES : int = 3
@@ -12,12 +11,12 @@ const _MOVE_DOWN_AMOUNT : int = 75
 var _desired_type # Enum
 var _num_markers := 0
 
-@onready var _target_scene = preload("res://target/target.tscn")
+@onready var _target_scene := preload("res://target/target.tscn")
 @onready var _target_mover = $Net
 
 
 func _ready() -> void:
-	var children = get_children(false)
+	var children := get_children(false)
 	for child in children:
 		if is_instance_of(child, Marker2D):
 			_num_markers += 1
@@ -27,9 +26,6 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	if get_tree().get_nodes_in_group("targets").size() ==0:
 		targets_gone.emit()
-
-
-
 
 
 func handle_hit(ball : Ball, first_hit : Target) -> void:
@@ -44,6 +40,7 @@ func handle_hit(ball : Ball, first_hit : Target) -> void:
 		SFX.play_no_match_sound()
 	# Delete the Ball last for processing order
 	ball.delete_self()
+
 
 func set_sprite_to_random_triangles(sprite :Sprite2D, desired_type : String) -> void:
 	var texture_node := get_node("TriangleImages/" + desired_type + str(randi_range(1,4)))
