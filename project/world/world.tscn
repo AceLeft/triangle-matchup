@@ -18,13 +18,13 @@ script = ExtResource("1_a48bm")
 [node name="Background" type="ColorRect" parent="."]
 offset_left = -28.0
 offset_top = -44.0
-offset_right = 891.0
+offset_right = 1000.0
 offset_bottom = 666.0
 
 [node name="FailLine" type="TextureRect" parent="."]
-offset_top = 592.0
-offset_right = 893.0
-offset_bottom = 610.0
+offset_top = 488.0
+offset_right = 987.0
+offset_bottom = 506.0
 texture = ExtResource("4_c4qcn")
 
 [node name="FailLineArea" type="Area2D" parent="FailLine"]
@@ -36,7 +36,7 @@ position = Vector2(445, 89)
 shape = SubResource("RectangleShape2D_f085i")
 
 [node name="Launcher" parent="." instance=ExtResource("2_qou6k")]
-position = Vector2(454, 517)
+position = Vector2(512, 517)
 
 [node name="TargetManager" parent="." instance=ExtResource("3_6mgrn")]
 
@@ -55,7 +55,7 @@ offset_bottom = 905.0
 color = Color(0.364706, 0.364706, 0.364706, 1)
 
 [node name="RightWall" type="StaticBody2D" parent="."]
-position = Vector2(966, 0)
+position = Vector2(1066, 0)
 collision_layer = 4
 collision_mask = 0
 

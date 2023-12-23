@@ -27,10 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://b236kumb2yk6i" path="res://target/asa4.png" id="26_11thl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf7ky"]
-size = Vector2(895.5, 67)
+size = Vector2(995.5, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sb5e2"]
-size = Vector2(898, 20)
+size = Vector2(997, 22)
 
 [node name="TargetManager" type="Node2D"]
 position = Vector2(0, 20)
@@ -39,14 +39,46 @@ script = ExtResource("1_aj3yn")
 [node name="TargetMarker1" type="Marker2D" parent="."]
 position = Vector2(162, 106)
 
+[node name="ColorRect" type="ColorRect" parent="TargetMarker1"]
+visible = false
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 1)
+
 [node name="TargetMarker2" type="Marker2D" parent="."]
 position = Vector2(354, 106)
 
+[node name="ColorRect2" type="ColorRect" parent="TargetMarker2"]
+visible = false
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 1)
+
 [node name="TargetMarker3" type="Marker2D" parent="."]
-position = Vector2(546, 106)
+position = Vector2(657, 106)
+
+[node name="ColorRect2" type="ColorRect" parent="TargetMarker3"]
+visible = false
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 1)
 
 [node name="TargetMarker4" type="Marker2D" parent="."]
-position = Vector2(737, 106)
+position = Vector2(848, 106)
+
+[node name="ColorRect2" type="ColorRect" parent="TargetMarker4"]
+visible = false
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 1)
 
 [node name="Net" type="RigidBody2D" parent="."]
 position = Vector2(39, 0)
@@ -55,7 +87,7 @@ collision_mask = 2
 gravity_scale = 0.0
 
 [node name="NetCollision" type="CollisionShape2D" parent="Net"]
-position = Vector2(413.25, -34)
+position = Vector2(463.25, -34)
 shape = SubResource("RectangleShape2D_jf7ky")
 one_way_collision = true
 
@@ -63,13 +95,13 @@ one_way_collision = true
 collision_layer = 4
 
 [node name="BallStopperCollision" type="CollisionShape2D" parent="Net/BallStopper"]
-position = Vector2(413, 0)
+position = Vector2(462.5, 1)
 shape = SubResource("RectangleShape2D_sb5e2")
 
 [node name="ColorRect" type="ColorRect" parent="Net/BallStopper/BallStopperCollision"]
-offset_left = -450.0
+offset_left = -501.0
 offset_top = -995.0
-offset_right = 452.0
+offset_right = 500.0
 offset_bottom = 4.0
 color = Color(0.364711, 0.364711, 0.364711, 1)
 
