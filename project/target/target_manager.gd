@@ -10,11 +10,17 @@ const _REQUIRED_MATCHES : int = 3
 const _MOVE_DOWN_AMOUNT : int = 75
 
 var _desired_type # Enum
+var _num_markers := 0
 
 @onready var _target_scene = preload("res://target/target.tscn")
+@onready var _target_mover = $Net
 
 
 func _ready() -> void:
+	var children = get_children(false)
+	for child in children:
+		if is_instance_of(child, Marker2D):
+			_num_markers += 1
 	_make_targets_on_markers()
 
 
@@ -52,12 +58,11 @@ func set_sprite_to_random_triangles(sprite :Sprite2D, desired_type : String) -> 
 
 
 func _make_targets_on_markers() -> void:
-	for i in range(1,5):
+	for i in range(1,_num_markers+1):
 		var target : Target = _target_scene.instantiate()
 		var marker_node = get_node("TargetMarker" + str(i))
 		target.global_position = marker_node.global_position
 		call_deferred("add_child", target)
-	
 
 
 func _on_ball_stopper_body_entered(body) -> void:
@@ -69,11 +74,11 @@ func _on_ball_stopper_body_entered(body) -> void:
 func _on_move_down_timer_timeout() -> void:
 	SFX.play_alarm_sound()
 	var tween = create_tween()
-	tween.tween_property($Net, "modulate", Color("ff796d"), 1).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property(_target_mover, "modulate", Color("ff796d"), 1).set_trans(Tween.TRANS_ELASTIC)
 	tween.tween_callback(_request_move_down)
 
 
 func _request_move_down() -> void:
 	var tween = create_tween()
-	tween.tween_property($Net, "modulate", Color(1,1,1), .2)
+	tween.tween_property(_target_mover, "modulate", Color(1,1,1), .2)
 	move_down_requested.emit()
