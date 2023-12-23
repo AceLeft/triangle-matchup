@@ -29,14 +29,7 @@ func _process(_delta) -> void:
 		targets_gone.emit()
 
 
-func move_down() -> void:
-	for child in get_children():
-		if "global_position" in child:
-			var tween = create_tween()
-			var target_x = child.global_position.x
-			var target_y = child.global_position.y+_MOVE_DOWN_AMOUNT
-			tween.tween_property(child, "global_position", Vector2(target_x, target_y), .25)
-	$MoveDownTimer.start()
+
 
 
 func handle_hit(ball : Ball, first_hit : Target) -> void:
@@ -81,4 +74,14 @@ func _on_move_down_timer_timeout() -> void:
 func _request_move_down() -> void:
 	var tween = create_tween()
 	tween.tween_property(_target_mover, "modulate", Color(1,1,1), .2)
-	move_down_requested.emit()
+	tween.tween_callback(_move_down)
+
+
+func _move_down() -> void:
+	for child in get_children():
+		if "global_position" in child:
+			var tween = create_tween()
+			var target_x = child.global_position.x
+			var target_y = child.global_position.y+_MOVE_DOWN_AMOUNT
+			tween.tween_property(child, "global_position", Vector2(target_x, target_y), .25)
+	$MoveDownTimer.start()

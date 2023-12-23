@@ -82,6 +82,5 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [connection signal="area_entered" from="FailLine/FailLineArea" to="." method="_on_fail_line_area_area_entered"]
-[connection signal="move_down_requested" from="TargetManager" to="." method="_on_target_manager_move_down_requested"]
 [connection signal="target_deleted" from="TargetManager" to="." method="_on_target_manager_target_deleted"]
 [connection signal="targets_gone" from="TargetManager" to="." method="_on_target_manager_targets_gone"]

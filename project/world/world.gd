@@ -13,16 +13,6 @@ func _ready() -> void:
 	Jukebox.play_game_song()
 
 
-func _process(_delta) -> void:
-	if _check_launcher:
-		if get_tree().get_nodes_in_group("balls").size() > 1:
-			_launcher.disable()
-		else:
-			$TargetManager.move_down()
-			_launcher.enable()
-			_check_launcher = false
-
-
 func _on_target_manager_targets_gone() -> void:
 	EndCondition.won = true
 	_go_to_end_screen()
@@ -31,10 +21,6 @@ func _on_target_manager_targets_gone() -> void:
 func _go_to_end_screen() -> void:
 	EndCondition.final_score = _score_keeper.get_score()
 	get_tree().call_deferred("change_scene_to_file", "res://ui/end_screen.tscn")
-
-
-func _on_target_manager_move_down_requested() -> void:
-	_check_launcher = true
 
 
 func _on_target_manager_target_deleted() -> void:
