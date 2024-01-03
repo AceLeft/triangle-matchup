@@ -7,14 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://c1n8yvhxfc4hm" path="res://ui/credits.png" id="8_hl7sa"]
 [ext_resource type="Texture2D" uid="uid://j5bwpqdqrdij" path="res://ui/how_to_play.png" id="9_eh4mw"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_8uxj5"]
-font_size = 28
-font_color = Color(0, 0.113725, 0.192157, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_v3lak"]
 font_size = 64
 outline_size = 13
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8uxj5"]
+font_size = 28
+font_color = Color(0, 0.113725, 0.192157, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -25,6 +25,25 @@ script = ExtResource("1_rhrit")
 position = Vector2(499.5, 294)
 scale = Vector2(1.72931, 1)
 texture = ExtResource("2_tuou6")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 240.5
+offset_top = 68.0
+offset_right = 783.5
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ms Wright's
+Triangle Matchup"
+label_settings = SubResource("LabelSettings_v3lak")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -113,25 +132,6 @@ Win/ Loss song composer: Spring. Bicycle horn sound by AntumDeluge
 "
 horizontal_alignment = 1
 autowrap_mode = 3
-
-[node name="Title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 240.5
-offset_top = 68.0
-offset_right = 783.5
-offset_bottom = 250.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Ms Wright's
-Triangle Matchup"
-label_settings = SubResource("LabelSettings_v3lak")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
