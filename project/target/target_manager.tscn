@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://btkcf71y1d2ma"]
+[gd_scene load_steps=24 format=3 uid="uid://btkcf71y1d2ma"]
 
 [ext_resource type="Script" path="res://target/target_manager.gd" id="1_aj3yn"]
 [ext_resource type="Texture2D" uid="uid://ypp561fwtywm" path="res://common/arrow.png" id="3_2tslh"]
@@ -10,10 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bb255xwi53acu" path="res://target/sas2.png" id="9_tioyi"]
 [ext_resource type="Texture2D" uid="uid://crmnmlb7hpv4r" path="res://target/sas3.png" id="10_m1ks7"]
 [ext_resource type="Texture2D" uid="uid://dj5gq5j6vlk63" path="res://target/sas4.png" id="11_8ouqo"]
-[ext_resource type="Texture2D" uid="uid://dh2yfwt4tr70" path="res://target/hl1.png" id="12_j30vs"]
-[ext_resource type="Texture2D" uid="uid://bwhdjhdhifdbo" path="res://target/hl2.png" id="13_0blot"]
-[ext_resource type="Texture2D" uid="uid://bghka0syxgr68" path="res://target/hl3.png" id="14_cf4ad"]
-[ext_resource type="Texture2D" uid="uid://c7a6jfk4qlqwh" path="res://target/hl4.png" id="15_tauhc"]
 [ext_resource type="Texture2D" uid="uid://dr7ehfyan0oj7" path="res://target/not1.png" id="16_ndxfk"]
 [ext_resource type="Texture2D" uid="uid://0dbb3mm2v04b" path="res://target/not2.png" id="17_c28dy"]
 [ext_resource type="Texture2D" uid="uid://by7h6ry3h8vlp" path="res://target/not3.png" id="18_lwgtr"]
@@ -209,30 +205,6 @@ layout_mode = 0
 offset_right = 160.0
 offset_bottom = 160.0
 texture = ExtResource("11_8ouqo")
-
-[node name="HL1" type="TextureRect" parent="TriangleImages"]
-layout_mode = 0
-offset_right = 160.0
-offset_bottom = 160.0
-texture = ExtResource("12_j30vs")
-
-[node name="HL2" type="TextureRect" parent="TriangleImages"]
-layout_mode = 0
-offset_right = 160.0
-offset_bottom = 160.0
-texture = ExtResource("13_0blot")
-
-[node name="HL3" type="TextureRect" parent="TriangleImages"]
-layout_mode = 0
-offset_right = 160.0
-offset_bottom = 160.0
-texture = ExtResource("14_cf4ad")
-
-[node name="HL4" type="TextureRect" parent="TriangleImages"]
-layout_mode = 0
-offset_right = 160.0
-offset_bottom = 160.0
-texture = ExtResource("15_tauhc")
 
 [node name="NOT1" type="TextureRect" parent="TriangleImages"]
 layout_mode = 0
