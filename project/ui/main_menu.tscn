@@ -27,6 +27,7 @@ scale = Vector2(1.72931, 1)
 texture = ExtResource("2_tuou6")
 
 [node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 421.0
 offset_top = 280.0
 offset_right = 611.0
@@ -35,6 +36,7 @@ texture_normal = ExtResource("2_qjk2i")
 texture_pressed = ExtResource("3_fk6wg")
 
 [node name="CreditsButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 254.0
 offset_top = 446.0
 offset_right = 405.0
@@ -42,6 +44,7 @@ offset_bottom = 593.0
 texture_normal = ExtResource("8_hl7sa")
 
 [node name="HowToPlayButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 614.0
 offset_top = 446.0
 offset_right = 765.0
