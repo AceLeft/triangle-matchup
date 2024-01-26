@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb255xwi53acu"
-path="res://.godot/imported/sas2.png-bdca96a34abe30d84cc71fd7e0d5e674.ctex"
+uid="uid://crv7dkhpjx0k0"
+path="res://.godot/imported/hyp1.png-a09e92a0feb921652f76e3fc2f1d6436.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://target/sas2.png"
-dest_files=["res://.godot/imported/sas2.png-bdca96a34abe30d84cc71fd7e0d5e674.ctex"]
+source_file="res://target/images/trig/hyp1.png"
+dest_files=["res://.godot/imported/hyp1.png-a09e92a0feb921652f76e3fc2f1d6436.ctex"]
 
 [params]
 

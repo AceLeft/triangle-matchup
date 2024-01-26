@@ -10,6 +10,8 @@ const _MOVE_DOWN_AMOUNT : int = 75
 
 var _desired_type # Enum
 var _num_markers := 0
+var _image_parent := "TriangleImages/"
+
 
 @onready var _target_scene := preload("res://target/target.tscn")
 @onready var _target_mover : RigidBody2D = $Net
@@ -17,6 +19,8 @@ var _num_markers := 0
 
 
 func _ready() -> void:
+	if !EndCondition.using_congruency:
+		_image_parent = "TrigImages/"
 	var children := get_children(false)
 	for child in children:
 		if is_instance_of(child, Marker2D):
@@ -44,8 +48,8 @@ func handle_hit(ball : Ball, first_hit : Target) -> void:
 	ball.delete_self()
 
 
-func set_sprite_to_random_triangles(sprite :Sprite2D, desired_type : String) -> void:
-	var texture_node := get_node("TriangleImages/" + desired_type + str(randi_range(1,4)))
+func set_sprite_to_random_image(sprite :Sprite2D, desired_type : String) -> void:
+	var texture_node := get_node(_image_parent + desired_type + str(randi_range(1,4)))
 	sprite.texture = texture_node.texture
 
 

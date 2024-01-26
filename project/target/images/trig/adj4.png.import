@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uphw1uyeg7ci"
-path="res://.godot/imported/aas4.png-e6a6438baa4b425d5b62b495c89245a8.ctex"
+uid="uid://bomj3e3pfpdqb"
+path="res://.godot/imported/adj4.png-e1173b06a715d10cf479aaa667026db6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://target/aas4.png"
-dest_files=["res://.godot/imported/aas4.png-e6a6438baa4b425d5b62b495c89245a8.ctex"]
+source_file="res://target/images/trig/adj4.png"
+dest_files=["res://.godot/imported/adj4.png-e1173b06a715d10cf479aaa667026db6.ctex"]
 
 [params]
 

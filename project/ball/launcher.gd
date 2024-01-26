@@ -13,12 +13,15 @@ var _launched := false
 var _allowed_to_launch := true
 var _ball : Ball
 var _direction : Vector2
+var _enum_keeper = Congruent
 @onready var _cannon : Node2D = $Cannon
 @onready var _spawn_timer : Timer = $InitialSpawnTimer
 @onready var _launch_animation : AnimatedSprite2D = $Cannon/Spring
 
 
 func _ready() -> void:
+	if !EndCondition.using_congruency:
+		_enum_keeper = Trig
 	_launched = true
 	_spawn_timer.start()
 
@@ -65,7 +68,7 @@ func _make_new_ball() -> void:
 	_ball.set_type(new_type)
 	_launched = false
 	call_deferred("add_child", _ball)
-	Congruent.modulate_to_correct_color($Cannon/Arrow, new_type)
+	_enum_keeper.modulate_to_correct_color($Cannon/Arrow, new_type)
 
 
 func _on_spawn_timer_timeout() -> void:
@@ -75,10 +78,11 @@ func _on_spawn_timer_timeout() -> void:
 
 func _choose_available_type() -> int:
 	var target_array = get_tree().get_nodes_in_group("targets")
-	var random_type = "NOT"
+	var random_type = ""
 	if target_array.size() > 0:
 		random_type = target_array.pick_random().type
-	return Congruent.Types.get(random_type)
+		return _enum_keeper.Types.get(random_type)
+	return 1
 
 
 func _on_spring_animation_finished() -> void:

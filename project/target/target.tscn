@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6vvcs05fetqx"]
 
 [ext_resource type="Script" path="res://target/target.gd" id="1_vs068"]
-[ext_resource type="Texture2D" uid="uid://brgv6oiuwf84o" path="res://target/aas1.png" id="2_qb3hg"]
+[ext_resource type="Texture2D" uid="uid://brgv6oiuwf84o" path="res://target/images/triangles/aas1.png" id="2_aivef"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l2ft0"]
 font_color = Color(0, 0, 0, 1)
@@ -20,7 +20,7 @@ freeze = true
 script = ExtResource("1_vs068")
 
 [node name="Triangles" type="Sprite2D" parent="."]
-texture = ExtResource("2_qb3hg")
+texture = ExtResource("2_aivef")
 
 [node name="TypeLabel" type="Label" parent="Triangles"]
 visible = false

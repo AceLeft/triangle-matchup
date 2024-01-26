@@ -7,8 +7,11 @@ signal destroyed
 
 
 func set_type(chosen_type) -> void:
-	type = Congruent.Types.find_key(chosen_type)
-	Congruent.modulate_to_correct_color($Ball, chosen_type)
+	var _enum_keeper = Congruent
+	if !EndCondition.using_congruency:
+		_enum_keeper = Trig
+	type = _enum_keeper.Types.find_key(chosen_type)
+	_enum_keeper.modulate_to_correct_color($Ball, chosen_type)
 	$CPUParticles2D.modulate = $Ball.modulate
 	$TypeLabel.text = type
 

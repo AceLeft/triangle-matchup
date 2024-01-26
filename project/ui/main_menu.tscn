@@ -54,6 +54,14 @@ offset_bottom = 363.0
 texture_normal = ExtResource("2_qjk2i")
 texture_pressed = ExtResource("3_fk6wg")
 
+[node name="TrigPlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 392.0
+offset_right = 593.0
+offset_bottom = 423.0
+text = "Play the Trig version!"
+
 [node name="CreditsButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 254.0
@@ -103,7 +111,7 @@ offset_right = 574.0
 offset_bottom = 376.0
 theme_override_colors/font_color = Color(0.117647, 0.2, 0.207843, 1)
 theme_override_font_sizes/font_size = 48
-text = "Objective: Clear all targets by launching balls and making matching groups of 3 or more. AVOID targets reaching the red line!
+text = "Objective: Clear all targets by launching balls and matching the type to the image. AVOID targets reaching the red line!
 Controls: 
 Change angle: A/D or Left/Right Arrow Keys or Scrollwheel
 Launch: Space"
@@ -134,6 +142,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="TrigPlayButton" to="." method="_on_trig_play_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="pressed" from="LabelBox/OKButton" to="." method="_on_ok_button_pressed"]

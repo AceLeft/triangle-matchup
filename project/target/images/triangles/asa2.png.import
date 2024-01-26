@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bogdp1tiqgyqh"
-path="res://.godot/imported/asa2.png-7923a06103ca39cbe636a7b4ea45d55f.ctex"
+path="res://.godot/imported/asa2.png-7adca95258fff2d05ab7aca74c27d518.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://target/asa2.png"
-dest_files=["res://.godot/imported/asa2.png-7923a06103ca39cbe636a7b4ea45d55f.ctex"]
+source_file="res://target/images/triangles/asa2.png"
+dest_files=["res://.godot/imported/asa2.png-7adca95258fff2d05ab7aca74c27d518.ctex"]
 
 [params]
 

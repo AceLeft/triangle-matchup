@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr7ehfyan0oj7"
-path="res://.godot/imported/not1.png-d2c9d821d577e291b5458d1d9eb1eec2.ctex"
+uid="uid://cq0ms4h2ofapl"
+path="res://.godot/imported/sss4.png-c340e69fa87d9af00dd20c315d6c4e86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://target/not1.png"
-dest_files=["res://.godot/imported/not1.png-d2c9d821d577e291b5458d1d9eb1eec2.ctex"]
+source_file="res://target/images/triangles/sss4.png"
+dest_files=["res://.godot/imported/sss4.png-c340e69fa87d9af00dd20c315d6c4e86.ctex"]
 
 [params]
 
