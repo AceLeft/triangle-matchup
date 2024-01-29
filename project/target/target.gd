@@ -18,9 +18,7 @@ func _ready() -> void:
 		$Triangles/TypeLabel.text = type
 
 
-
-
-func _on_ball_stopper_body_entered(body):
+func _on_ball_stopper_body_entered(body) -> void:
 	if is_instance_of(body, Ball):
 		# It is the assumption that the Targets 
 		# Are children of TargetManager
